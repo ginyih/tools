@@ -1,0 +1,19 @@
+//up
+nameCommand -annotation "UV Align up" -default 0 -command "string $focusPanel = `getPanel -withFocus`;\nif (`gmatch $focusPanel \"polyTexturePlacementPanel*\"`)\n{\n\talignUV 0 0 1 0;\n}\nelse\n{\n\tpickWalkUp;\n}" "alignUp";
+hotkey -keyShortcut "Up" -name "alignUp";
+
+//down
+nameCommand -annotation "UV Align down" -default 0 -command "string $focusPanel = `getPanel -withFocus`;\nif (`gmatch $focusPanel \"polyTexturePlacementPanel*\"`)\n{\n\talignUV 0 0 1 1;\n}\nelse\n{\n\tpickWalkDown;\n}" "alignDown";
+hotkey -keyShortcut "Down" -name "alignDown";
+
+//left
+nameCommand -annotation "UV Align left" -default 0 -command "string $focusPanel = `getPanel -withFocus`;\nif (`gmatch $focusPanel \"polyTexturePlacementPanel*\"`)\n{\n\talignUV 1 1 0 0;\n}\nelse\n{\n\tpickWalkLeft;\n}" "alignLeft";
+hotkey -keyShortcut "Left" -name "alignLeft";
+
+//right
+nameCommand -annotation "UV Align right" -default 0 -command "string $focusPanel = `getPanel -withFocus`;\nif (`gmatch $focusPanel \"polyTexturePlacementPanel*\"`)\n{\n\talignUV 1 0 0 0;\n}\nelse\n{\n\tpickWalkRight;\n}" "alignRight";
+hotkey -keyShortcut "Right" -name "alignRight";
+
+savePrefs -hotkeys;
+
+confirmDialog -title "Restart Maya!" -message "Please restart maya to completion :)" -button "OK";
