@@ -4,6 +4,8 @@ from maya import cmds
 
 def curveShapeReplacer(selection):
 	'''
+	Replace curve shape without altering the pivot and transformation. **Mainly for rig use, changing the appearance of rig controller curves for better design and usability.**
+
 	Usage:	Select old curve -> new curve -> curveShapeReplacer( cmds.ls( selection = True ) )
 
 	:param selection: Curve(s) selection
